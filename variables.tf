@@ -15,8 +15,8 @@ variable "subnets" {
   description = "A list of subnets."
   type        = list(string)
   default     = [
-    "subnet-0a52d220711d067bc",
-    "subnet-044a1894ca952a451",
-    "subnet-0c143b18498b38c84"
+    "subnet-00a6b89e056b245a3",
+    "subnet-0f4b6bd81c250de72",
+    "subnet-0002bbc59a5ee5e2d"
   ]
 }
