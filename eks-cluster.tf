@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "17.24.0"
