@@ -4,7 +4,7 @@ variable "region" {
 }
 variable "vpc_id" {
   type = string
-  default = "vpc-0cac7fedf4d8085ee"
+  default = "vpc-06576108ad947c04a"
 }
 variable "cluster_name" {
   description = "Name of the EKS cluster. Also used as a prefix in names of related resources."
