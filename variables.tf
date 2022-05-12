@@ -4,7 +4,7 @@ variable "region" {
 }
 variable "vpc_id" {
   type = string
-  default = "vpc-06576108ad947c04a"
+  default = "vpc-0b4cba11eaa653fba"
 }
 variable "cluster_name" {
   description = "Name of the EKS cluster. Also used as a prefix in names of related resources."
@@ -15,8 +15,8 @@ variable "subnets" {
   description = "A list of subnets."
   type        = list(string)
   default     = [
-    "subnet-00a6b89e056b245a3",
-    "subnet-0f4b6bd81c250de72",
-    "subnet-0002bbc59a5ee5e2d"
+    "subnet-0648165c6cb6f23e5",
+    "subnet-0c6d09930ac8d6be6",
+    "subnet-09576884b6e657534"
   ]
 }
