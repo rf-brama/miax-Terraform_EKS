@@ -57,3 +57,28 @@ resource "aws_security_group" "all_worker_mgmt" {
     Department = "Infrastructure"
   }  
 }
+
+/* resource "aws_security_group" "OpenSecurityGroup" {
+  name_prefix = "all_worker_management"
+  description = "Build a custom security group."
+  vpc_id = var.vpc_id
+
+  ingress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name       = "Open-sg"
+    Department = "Infrastructure"
+  }
+
+} */

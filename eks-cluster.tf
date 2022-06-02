@@ -6,7 +6,7 @@ module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   version         = "17.24.0"
   cluster_name    = var.cluster_name
-  cluster_version = "1.22"
+  cluster_version = "1.21"
   subnets         = var.subnets
 
   vpc_id = var.vpc_id
@@ -39,4 +39,21 @@ data "aws_eks_cluster" "cluster" {
 
 data "aws_eks_cluster_auth" "cluster" {
   name = module.eks.cluster_id
+}
+
+resource "aws_eks_node_group" "vericlear" {
+  cluster_name    = var.cluster_name
+  node_group_name = "vericlear"
+  node_role_arn   = "arn:aws:iam::443340960488:role/MIAX-POC2022052321065380730000000e"
+  subnet_ids      = var.subnets
+
+  scaling_config {
+    desired_size = 2
+    max_size     = 2
+    min_size     = 2
+  }
+
+  update_config {
+    max_unavailable = 2
+  }  
 }
