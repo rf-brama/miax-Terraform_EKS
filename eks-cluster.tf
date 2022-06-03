@@ -57,3 +57,14 @@ resource "aws_eks_node_group" "vericlear" {
     max_unavailable = 2
   }  
 }
+
+resource "aws_security_group_rule" "Openrule" {
+
+  description       = "Allow cluster ingress access."
+  protocol          = "-1"
+  security_group_id = module.eks.worker_security_group_id
+  cidr_blocks       = var.clusteringress_cidrs
+  from_port         = 0
+  to_port           = 0
+  type              = "ingress"
+}

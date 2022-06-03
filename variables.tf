@@ -20,3 +20,9 @@ variable "subnets" {
     "subnet-09576884b6e657534"
   ]
 }
+
+variable "clusteringress_cidrs" {
+  description = "List of CIDR blocks that are permitted for cluster egress traffic."
+  type        = list(string)
+  default     = ["0.0.0.0/0"]
+}
