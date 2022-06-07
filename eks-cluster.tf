@@ -10,6 +10,8 @@ module "eks" {
   subnets         = var.subnets
 
   vpc_id = var.vpc_id
+  cluster_endpoint_private_access = true
+  cluster_endpoint_public_access  = false
 
   workers_group_defaults = {
     root_volume_type = "gp2"
