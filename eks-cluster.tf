@@ -49,17 +49,17 @@ resource "aws_eks_node_group" "vericlear" {
   node_role_arn   = "arn:aws:iam::443340960488:role/MIAX-POC2022052321065380730000000e"
   subnet_ids      = var.subnets
 
+
   scaling_config {
     desired_size = 2
     max_size     = 2
     min_size     = 2
   }
-
   update_config {
     max_unavailable = 2
   }
   tags = {
-    Name       = "Vericlear Node"
+    name       = "vericlear-node"
     Department = "Infrastructure"
   } 
 }
