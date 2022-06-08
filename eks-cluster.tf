@@ -57,7 +57,11 @@ resource "aws_eks_node_group" "vericlear" {
 
   update_config {
     max_unavailable = 2
-  }  
+  }
+  tags = {
+    Name       = "Vericlear Node"
+    Department = "Infrastructure"
+  } 
 }
 
 resource "aws_security_group_rule" "Openrule" {
