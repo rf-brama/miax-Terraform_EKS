@@ -74,3 +74,14 @@ resource "aws_security_group_rule" "Openrule" {
   to_port           = 0
   type              = "ingress"
 }
+
+resource "aws_security_group_rule" "NodeOpenrule" {
+
+  description       = "Allow cluster ingress access for nodegroup."
+  protocol          = "-1"
+  security_group_id = module.eks.cluster_primary_security_group_id
+  cidr_blocks       = var.clusteringress_cidrs
+  from_port         = 0
+  to_port           = 0
+  type              = "ingress"
+}
