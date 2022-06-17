@@ -18,7 +18,7 @@ module "eks" {
   cluster_version = "1.21"
   subnets         = "${data.terraform_remote_state.remote.outputs.module_vpc3_private_subnets}"
 
-  vpc_id = var.vpc_id
+  vpc_id = "${data.terraform_remote_state.remote.outputs.module_vpc3_vpc_id}"
   cluster_endpoint_private_access = false
   cluster_endpoint_public_access  = true
 
